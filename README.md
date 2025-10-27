@@ -1,7 +1,7 @@
 # PromptWise
 Official repository of the paper "PromptWise: Online Learning for Cost-Aware Prompt Assignment in Generative Models"
 
-[Xiaoyan Hu](https://yannxiaoyanhu.github.io), [Laren Pick](https://lmpick.github.io/), [Ho-fung Leung](http://www.cse.cuhk.edu.hk/~lhf/), [Farzan Farnia](https://www.cse.cuhk.edu.hk/~farnia/Home.html) [[Paper]([https://arxiv.org/pdf/2410.13287](https://arxiv.org/abs/2505.18901))]
+[Xiaoyan Hu](https://yannxiaoyanhu.github.io), [Laren Pick](https://lmpick.github.io/), [Ho-fung Leung](http://www.cse.cuhk.edu.hk/~lhf/), [Farzan Farnia](https://www.cse.cuhk.edu.hk/~farnia/Home.html) [[Paper](https://arxiv.org/abs/2505.18901)]
 
 ![Figure](https://github.com/yannxiaoyanhu/PromptWise/blob/main/Fig1.png)
 ![Figure](https://github.com/yannxiaoyanhu/PromptWise/blob/main/Interaction_Protocol.png)
