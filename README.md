@@ -12,6 +12,14 @@ PromptWise: ```python test.py --learner promptwise --kernel_method lin --reg_met
 
 PromptWise-KLR: ```python test.py --learner promptwise --kernel_method rbf --reg_method klr --cost_para 0.001 --rd_budget 5```
 
+## Acknowledgements
+
+The authors would like to acknowledge the following repositories:
+
+1. HumanEval: [https://github.com/openai/human-eval](https://github.com/openai/human-eval)
+2. CodeGeeX: [https://github.com/zai-org/CodeGeeX](https://github.com/zai-org/CodeGeeX)
+3. BigCodeBench: [https://github.com/bigcode-project/bigcodebench](https://github.com/bigcode-project/bigcodebench)
+
 ## Citation
 ```
 @misc{hu2025promptwiseonlinelearningcostaware,
