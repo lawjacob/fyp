@@ -6,6 +6,12 @@ Official repository of the paper "PromptWise: Online Learning for Cost-Aware Pro
 ![Figure](https://github.com/yannxiaoyanhu/PromptWise/blob/main/Fig1.png)
 ![Figure](https://github.com/yannxiaoyanhu/PromptWise/blob/main/Interaction_Protocol.png)
 
+## Usage Examples
+
+PromptWise: ```python test.py --learner promptwise --kernel_method lin --reg_method mle --cost_para 0.001 --rd_budget 5```
+
+PromptWise-KLR: ```python test.py --learner promptwise --kernel_method rbf --reg_method klr --cost_para 0.001 --rd_budget 5```
+
 ## Citation
 ```
 @misc{hu2025promptwiseonlinelearningcostaware,
