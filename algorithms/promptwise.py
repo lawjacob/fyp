@@ -11,8 +11,11 @@ def update_inverse_lin(V_inv, x):
     return V_inv_new
 
 
-def solve_lin_logistic_regression(X, R, initial_theta=None, method='L-BFGS-B'):
+def solve_lin_logistic_regression(X, R, initial_theta=None, method='L-BFGS-B', sample_weight=None):
     n_samples, n_features = X.shape
+    weights = np.ones(n_samples) if sample_weight is None else np.asarray(sample_weight)
+    if weights.shape != (n_samples,) or np.any(weights < 0) or not np.all(np.isfinite(weights)):
+        raise ValueError('sample_weight must contain one finite nonnegative weight per row')
 
     # Initialize θ if not provided
     if initial_theta is None:
@@ -24,8 +27,8 @@ def solve_lin_logistic_regression(X, R, initial_theta=None, method='L-BFGS-B'):
 
         # Log with stability - use logaddexp for better numerical stability
         log_likelihood = np.sum(
-            R * -np.logaddexp(0, -scores) +  # More stable than log(sigmoid(scores))
-            (1 - R) * -np.logaddexp(0, scores)  # More stable than log(1-sigmoid(scores))
+            weights * (R * -np.logaddexp(0, -scores) +
+            (1 - R) * -np.logaddexp(0, scores))
         )
 
         # Add L2 regularization to prevent overfitting and improve stability
@@ -35,7 +38,7 @@ def solve_lin_logistic_regression(X, R, initial_theta=None, method='L-BFGS-B'):
 
     def gradient(theta):
         predictions = sigmoid(X @ theta)
-        grad = X.T @ (predictions - R)
+        grad = X.T @ (weights * (predictions - R))
 
         # Add regularization gradient (excluding bias term)
         reg_grad = theta
@@ -180,7 +183,7 @@ class promptwise:
             self.rd_ucb_q = np.empty((self.G,))
             self.rd_ucb_u = np.empty((self.G,))
             for g in range(self.G):
-                self.rd_ucb_q[g] = self.predict(g=g, context=context)
+                self.rd_ucb_q[g] = np.asarray(self.predict(g=g, context=context)).item()
                 self.rd_ucb_u[g] = 1. - self.cost_para * self.model_cost[g] / self.rd_ucb_q[g]
 
         if np.max(self.rd_ucb_u) < 0:
@@ -239,7 +242,7 @@ class promptwise:
             if not self.per_step_update and self.visitation[g] > self.tau_exp:     # not in the exploration phase
                 self.fit_reg_model(g=g)
                 if self.rd_ucb_q is not None:
-                    self.rd_ucb_q[g] = self.predict(g=g, context=context)
+                    self.rd_ucb_q[g] = np.asarray(self.predict(g=g, context=context)).item()
                     self.rd_ucb_u[g] = 1. - self.cost_para * self.model_cost[g] / self.rd_ucb_q[g]
 
     def reset_rd_stats(self):

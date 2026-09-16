@@ -1,0 +1,44 @@
+{
+  "data": "runs/dars-gpqa-v1/outcomes.npz",
+  "output": "runs/dars-gpqa-v1/replay",
+  "synthetic": false,
+  "histories": [
+    50,
+    200,
+    1000
+  ],
+  "attempts": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "scenarios": [
+    "id",
+    "arm_shift"
+  ],
+  "modes": [
+    "episodic"
+  ],
+  "eval_requests": 60,
+  "discount": 0.98,
+  "gram_ridge": 1000000.0,
+  "cost_para": 0.05,
+  "cost_budget": 15.0,
+  "exp_para": null,
+  "trace": true,
+  "sampling": "without_replacement",
+  "data_sha256": "80235ec09e70a886cbf0eb0e3f5a3c9e0701fec4a0bd33edd136ab319d4f27f4",
+  "source_sha256": {
+    "benchmarks/retry_benchmark.py": "9ad3e3d0ccd1837fbd51e6553c2082dedac482195cad35cb0f7a90237e4701fe",
+    "benchmarks/routers.py": "d85ee0b7ac8d4fde37c0d198bd10aa692ee2cf4c6b249ac4cc2840b0d10c2985",
+    "benchmarks/collect_qwen.py": "b68c22e13b24d528e65aa111225db08c2fb6e405f52236497085ebea932ee343",
+    "algorithms/promptwise.py": "811483843a556378cc1320c225633da6271dbaa733404c4bd15a46fe9a88036c"
+  },
+  "cost_note": "Fixed costs from NPZ; inspect its metadata for units. No wall-clock/dollar claim."
+}

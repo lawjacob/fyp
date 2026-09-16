@@ -32,3 +32,19 @@ The authors would like to acknowledge the following repositories:
       url={https://arxiv.org/abs/2505.18901}, 
 }
 ```
+
+## Retry recovery diagnostic (Qwen + exponential weighting)
+
+For CPU-only replay of existing six-model responses, use the
+[DARS replay guide](docs/dars-replay.md). It includes the four policies, audited
+data selection, paired comparisons, and commands requiring no GPU inference.
+
+See [the overnight benchmark guide](docs/overnight-benchmark.md) for GPU setup,
+resumable Qwen collection, four routing policies, cost/attempt limits, and replay
+traces. This is a new diagnostic, not a numerical reproduction of the paper.
+
+```bash
+python -m pip install -r requirements-benchmark.txt  # install CUDA PyTorch separately
+mkdir -p runs
+nohup bash scripts/overnight.sh > runs/overnight.log 2>&1 &
+```

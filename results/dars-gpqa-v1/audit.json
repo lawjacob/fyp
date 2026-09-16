@@ -1,0 +1,114 @@
+{
+  "dataset": "gpqa",
+  "revision": "3109e08fb15b24192c0284b9fc11ca9f71110950",
+  "source_sha256": "9a9f9c797647b8397a6b4eee2ce9915187dcf8dd5a3a271e8b33f4abec006025",
+  "importer_sha256": "3cce5ee9136c736c74fb0ccab10d37587ebfd66f34f3f5c8032b7286f8b6713c",
+  "source_rows": 30000,
+  "selected_rows": 6000,
+  "selection": "source train, rewrite 0, decode IDs 0..4; new parent-level split",
+  "published_test_excluded": "Its decoding_variation observations mix temperatures.",
+  "split_seed": 42,
+  "unique_parents": 200,
+  "train_parents": 140,
+  "evaluation_parents": 60,
+  "models": [
+    "google/gemma-3-12b-it",
+    "mistralai/mistral-small-3.2-24b-instruct",
+    "qwen/qwen3-32b",
+    "meta-llama/llama-3.3-70b-instruct",
+    "google/gemini-2.5-flash-lite",
+    "deepseek/deepseek-chat-v3.1"
+  ],
+  "samples_per_model_prompt": 5,
+  "cost_definition": "Fixed mean raw usage.cost on NEW training parents, divided by cheapest mean. Expected-cost proxy; not actual spend or latency per replay attempt.",
+  "cost_unit_recorded_dollars": 6.292891428571432e-05,
+  "train_mean_recorded_dollars": [
+    6.292891428571432e-05,
+    9.155417857142861e-05,
+    0.0002956945142857143,
+    0.00025596276428571435,
+    0.0003092907142857144,
+    0.000629923185714286
+  ],
+  "fixed_costs": [
+    1.0,
+    1.4548825386649424,
+    4.698865658847714,
+    4.067490551697333,
+    4.914922143443485,
+    10.010075541018617
+  ],
+  "features": "31 hashed features + intercept",
+  "categories_train": {
+    "Chemistry": 57,
+    "Biology": 30,
+    "Physics": 53
+  },
+  "categories_evaluation": {
+    "Chemistry": 25,
+    "Physics": 30,
+    "Biology": 5
+  },
+  "decoding": {
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "max_tokens": 768
+  },
+  "score": "Published binary score, not independently rejudged; no GSM8K #### parsing",
+  "model_audit": {
+    "google/gemma-3-12b-it": {
+      "records": 1000,
+      "train_success": 0.26142857142857145,
+      "eval_success": 0.25333333333333335,
+      "truncated": 210,
+      "missing_prediction": 150,
+      "empty_output": 0,
+      "parse_flag_false": 0
+    },
+    "mistralai/mistral-small-3.2-24b-instruct": {
+      "records": 1000,
+      "train_success": 0.33,
+      "eval_success": 0.48,
+      "truncated": 93,
+      "missing_prediction": 71,
+      "empty_output": 0,
+      "parse_flag_false": 0
+    },
+    "qwen/qwen3-32b": {
+      "records": 1000,
+      "train_success": 0.16714285714285715,
+      "eval_success": 0.15666666666666668,
+      "truncated": 700,
+      "missing_prediction": 696,
+      "empty_output": 0,
+      "parse_flag_false": 0
+    },
+    "meta-llama/llama-3.3-70b-instruct": {
+      "records": 1000,
+      "train_success": 0.39285714285714285,
+      "eval_success": 0.38666666666666666,
+      "truncated": 286,
+      "missing_prediction": 188,
+      "empty_output": 0,
+      "parse_flag_false": 2
+    },
+    "google/gemini-2.5-flash-lite": {
+      "records": 1000,
+      "train_success": 0.20857142857142857,
+      "eval_success": 0.15666666666666668,
+      "truncated": 800,
+      "missing_prediction": 474,
+      "empty_output": 0,
+      "parse_flag_false": 0
+    },
+    "deepseek/deepseek-chat-v3.1": {
+      "records": 1000,
+      "train_success": 0.37142857142857144,
+      "eval_success": 0.43333333333333335,
+      "truncated": 466,
+      "missing_prediction": 299,
+      "empty_output": 0,
+      "parse_flag_false": 2
+    }
+  }
+}
