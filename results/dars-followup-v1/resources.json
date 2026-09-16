@@ -1,0 +1,23 @@
+{
+  "prior_ridge1": {
+    "wall_time": "1:51.10",
+    "peak_rss_kib": 103812,
+    "cpu_percent": "99%",
+    "exit_status": 0,
+    "numerical_threads": 1
+  },
+  "matched": {
+    "wall_time": "1:20.77",
+    "peak_rss_kib": 107084,
+    "cpu_percent": "98%",
+    "exit_status": 0,
+    "numerical_threads": 1
+  },
+  "matched_ridge1": {
+    "wall_time": "1:08.04",
+    "peak_rss_kib": 105504,
+    "cpu_percent": "98%",
+    "exit_status": 0,
+    "numerical_threads": 1
+  }
+}

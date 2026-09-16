@@ -38,6 +38,9 @@ The authors would like to acknowledge the following repositories:
 For CPU-only replay of existing six-model responses, use the
 [DARS replay guide](docs/dars-replay.md). It includes the four policies, audited
 data selection, paired comparisons, and commands requiring no GPU inference.
+The [follow-up protocol](docs/dars-followup-protocol.md) isolates recovery after
+a shared failure and tests the uncertainty prior; see the
+[follow-up results](docs/dars-followup-results.md) for findings and data-expansion options.
 
 See [the overnight benchmark guide](docs/overnight-benchmark.md) for GPU setup,
 resumable Qwen collection, four routing policies, cost/attempt limits, and replay
